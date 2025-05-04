@@ -32,4 +32,88 @@ venv\Scripts\activate      # Windows
 
 # 4. 의존성 설치
 pip install -r requirements.txt
+```
+---
 
+## 주요 스크립트
+1. train_starspace.py
+- 유저 임베딩 학습용 학습 스크립트
+- positive/negative pair 생성
+2. extract_embeddings.py
+- 학습된 모델에서 유저 임베딩 추출
+3. seed_recommendation.py
+- 시드 유저 리스트를 받아 평균 벡터 기반 기본 추천
+4. expand_seed_users.py
+- LSH를 이용한 후보군 검색 후 Affinity MLP로 점수 매김
+5, evaluate.py
+- 추천 결과에 대한 Precision@K, Recall@K 계산
+
+---
+
+## 사용 예시
+1) 임베딩 학습
+```bash
+python train_starspace.py \
+  --interactions data/interactions.csv \
+  --epochs 10 \
+  --batch-size 1024 \
+  --embedding-dim 128 \
+  --output models/starspace.pth
+```
+2) 임베딩 추출
+```bash
+python extract_embeddings.py \
+  --model-path models/starspace.pth \
+  --output embeddings/user_embeddings.csv
+```
+3) 시드 기반 기본 추천
+```bash
+python seed_recommendation.py \
+  --embeddings embeddings/user_embeddings.csv \
+  --seed-list seeds.txt \
+  --top-k 100 \
+  --output recommendations/seed_basic.csv
+```
+4) LSH + Affinity 확장 추천
+```bash
+python expand_seed_users.py \
+  --embeddings embeddings/user_embeddings.csv \
+  --seed-list seeds.txt \
+  --lsh-index-path indices/user_lsh.index \
+  --affinity-model models/affinity.pth \
+  --top-k 100 \
+  --output recommendations/expanded.csv
+```
+5) 평가
+```bash
+python evaluate.py \
+  --recommendations recommendations/expanded.csv \
+  --ground-truth data/ground_truth.csv \
+  --metrics precision recall \
+  --k 100
+```
+---
+## 디렉터리 구조
+```bash
+├── data/
+│   ├── interactions.csv
+│   ├── user_meta.csv
+│   └── item_meta.csv
+├── indices/
+│   └── user_lsh.index
+├── models/
+│   ├── starspace.pth
+│   └── affinity.pth
+├── embeddings/
+│   └── user_embeddings.csv
+├── recommendations/
+│   ├── seed_basic.csv
+│   └── expanded.csv
+├── train_starspace.py
+├── extract_embeddings.py
+├── seed_recommendation.py
+├── expand_seed_users.py
+├── evaluate.py
+├── requirements.txt
+└── README.md
+```
