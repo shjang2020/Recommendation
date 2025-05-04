@@ -4,7 +4,7 @@
 - **저자**: Pinterest 연구팀
 - **키워드**: Audience Expansion, Embedding, Transfer Learning, Look-alike Audience
 
-- ## Abstract | 논문 한눈에 보기
+- ## Abstract
 
 온라인 광고에서 광고주는 기존 고객과 유사한 신규 고객을 찾는 **Audience Expansion** 기술을 활용합니다. 본 논문에서는 Pinterest가 **실제 서비스에 적용한 임베딩 기반 Audience Expansion 모델**을 소개합니다.
 
