@@ -140,7 +140,7 @@ def main(cfg):
 # ---------- CLI 엔트리포인트 ----------------------------------------------
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--csv_path", default="mock_user_topic_triplets.csv")
+    ap.add_argument("--csv_path", default="data/mock_user_topic_triplets.csv")
     ap.add_argument("--batch_size", type=int, default=256)
     ap.add_argument("--epochs", type=int, default=10)
     ap.add_argument("--margin", type=float, default=0.2)
