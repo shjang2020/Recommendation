@@ -16,104 +16,134 @@
 
 ---
 
-## 설치 및 환경 구성
+## 환경 설정
 
 ```bash
 # 1. 리포지토리 클론
 git clone https://github.com/shjang2020/Recommendation.git
-
-# 2. 해당 디렉터리로 이동
 cd Recommendation/Practice/"Transfer Learning for Expanding Advertiser Audiences"
 
-# 3. 가상환경 생성 및 활성화 (optional)
-python3 -m venv venv
-source venv/bin/activate   # Linux / macOS
-venv\Scripts\activate      # Windows
-
-# 4. 의존성 설치
-pip install -r requirements.txt
+# 2. Conda 환경 생성 & 활성화
+conda env create -f environment.yml
+conda activate transfer-learning-ad-audiences
 ```
 ---
 
-## 주요 스크립트
-1. train_starspace.py
-- 유저 임베딩 학습용 학습 스크립트
-- positive/negative pair 생성
-2. extract_embeddings.py
-- 학습된 모델에서 유저 임베딩 추출
-3. seed_recommendation.py
-- 시드 유저 리스트를 받아 평균 벡터 기반 기본 추천
-4. expand_seed_users.py
-- LSH를 이용한 후보군 검색 후 Affinity MLP로 점수 매김
-5, evaluate.py
-- 추천 결과에 대한 Precision@K, Recall@K 계산
+## 주요 스크립트 개요
+1. generate_mock_data.py
+- 사용자-토픽 triplet 형태의 모의 데이터를 생성합니다.
+2. dataset.py
+- mock_user_topic_triplets.csv를 로드해 MockTripletDataset과 collate_fn을 제공합니다.
+3. model.py
+- UserEncoder, TopicEmbedding, StarSpaceModel 아키텍처를 정의합니다.
+4. train.py
+- StarSpace-style margin-ranking loss로 유저 임베딩을 학습하고 최적 체크포인트를 저장합니다.
+5. embed.py
+-  학습된 user_encoder_best.pth를 로드해 전체 사용자 벡터를 추출, Parquet/CSV로 저장합니다.
+6. build_ann_index.py
+- 추출된 사용자 임베딩을 Annoy 인덱스로 빌드하고 .idx 및 .idmap.npy를 저장합니다.
+7. expand_seed_users.py
+- 시드 유저 리스트를 받아 Annoy 또는 cosine 유사도로 후보군을 확장·저장합니다.
+8. train_affinity.py
+- LSH로 생성된 시드-후보 쌍으로부터 positive/negative pair를 샘플링해 Affinity Scoring MLP를 학습합니다.
+9. lsh_mapreduce.py & mapreduce_framework.py
+- 대규모 임베딩을 분산 처리하는 LSH MapReduce 예시를 제공합니다.
+10. region_seed_ensemble_expansion.py
+- LSH, Affinity MLP, 그리고 LogisticClassifier를 결합한 앙상블 확장 파이프라인의 메인 스크립트입니다.
 
 ---
 
 ## 사용 예시
-1) 임베딩 학습
+1) 모의 데이터 생성
 ```bash
-python train_starspace.py \
-  --interactions data/interactions.csv \
+python generate_mock_data.py \
+  --num-users 10000 \
+  --num-topics 100 \
+  --interactions-per-user 50
+```
+2) 임베딩 학습
+```bash
+python train.py \
+  --csv_path data/mock_user_topic_triplets.csv \
   --epochs 10 \
-  --batch-size 1024 \
-  --embedding-dim 128 \
-  --output models/starspace.pth
+  --batch_size 256 \
+  --dim 32 \
+  --lr 1e-3 \
+  --margin 0.2 \
+  --es_patience 3
 ```
-2) 임베딩 추출
+3) 임베딩 추출
 ```bash
-python extract_embeddings.py \
-  --model-path models/starspace.pth \
-  --output embeddings/user_embeddings.csv
+python embed.py \
+  --csv_path data/mock_user_topic_triplets.csv \
+  --model_path runs/<timestamp>/user_encoder_best.pth \
+  --out_path data/user_embeddings.parquet \
+  --format parquet
 ```
-3) 시드 기반 기본 추천
+4) Annoy 인덱스 생성
 ```bash
-python seed_recommendation.py \
-  --embeddings embeddings/user_embeddings.csv \
-  --seed-list seeds.txt \
-  --top-k 100 \
-  --output recommendations/seed_basic.csv
+python build_ann_index.py \
+  --embed_path data/user_embeddings.parquet \
+  --index_path data/annoy_user.idx \
+  --metric angular \
+  --n_trees 50
 ```
-4) LSH + Affinity 확장 추천
+5) 시드 기반 후보 확장
 ```bash
 python expand_seed_users.py \
-  --embeddings embeddings/user_embeddings.csv \
-  --seed-list seeds.txt \
-  --lsh-index-path indices/user_lsh.index \
-  --affinity-model models/affinity.pth \
-  --top-k 100 \
-  --output recommendations/expanded.csv
+  1234 5678 9012 \
+  --top_k 200 \
+  --index_path data/annoy_user.idx \
+  --search_k 500 \
+  --pairs_out data/seed_to_cands.npy
 ```
-5) 평가
+6) Affinity MLP 학습
 ```bash
-python evaluate.py \
-  --recommendations recommendations/expanded.csv \
-  --ground-truth data/ground_truth.csv \
-  --metrics precision recall \
-  --k 100
+python train_affinity.py \
+  --embed_path data/user_embeddings.parquet \
+  --lsh_pairs data/seed_to_cands.npy \
+  --out_dir models \
+  --dim 32 \
+  --epochs 10 \
+  --batch 512
 ```
+7) 앙상블 확장 실행
+```bash
+python region_seed_ensemble_expansion.py \
+  --embed_path data/user_embeddings.parquet \
+  --seed_ids 1234 5678 9012 \
+  --n_workers 4 \
+  --n_trees 10 \
+  --top_k_lsh 200 \
+  --top_k_final 100 \
+  --out_path data/final_expanded.npy
+```
+
 ---
 ## 디렉터리 구조
 ```bash
 ├── data/
-│   ├── interactions.csv
-│   ├── user_meta.csv
-│   └── item_meta.csv
-├── indices/
-│   └── user_lsh.index
+│   ├── mock_user_topic_triplets.csv
+│   ├── user_embeddings.parquet
+│   ├── annoy_user.idx
+│   ├── annoy_user.idmap.npy
+│   ├── seed_to_cands.npy
+│   └── final_expanded.npy
 ├── models/
-│   ├── starspace.pth
-│   └── affinity.pth
-├── embeddings/
-│   └── user_embeddings.csv
-├── recommendations/
-│   ├── seed_basic.csv
-│   └── expanded.csv
-├── train_starspace.py
-├── extract_embeddings.py
-├── seed_recommendation.py
+│   └── affinity_mlp.pth
+├── runs/
+│   └── user_encoder_best.pth
+├── generate_mock_data.py
+├── dataset.py
+├── model.py
+├── train.py
+├── embed.py
+├── build_ann_index.py
 ├── expand_seed_users.py
-├── evaluate.py
-├── requirements.txt
+├── train_affinity.py
+├── lsh_mapreduce.py
+├── mapreduce_framework.py
+├── region_seed_ensemble_expansion.py
+├── environment.yml 
 └── README.md
 ```
