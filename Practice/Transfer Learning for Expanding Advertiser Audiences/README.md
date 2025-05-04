@@ -1,17 +1,35 @@
-# Finding Users Who Act Alike: Transfer Learning for Expanding Advertiser Audiences (KDD 2019)
+# Finding Users Who Act Alike: Transfer Learning for Expanding Advertiser Audiences
 
-- **원본 논문**: https://www.pinterestlabs.com/media/phkg2uau/transferlearning-kdd2019.pdf
-- **저자**: Pinterest 연구팀
-- **키워드**: Audience Expansion, Embedding, Transfer Learning, Look-alike Audience
+[📄 논문 원문 (KDD 2019)](https://dl.acm.org/doi/10.1145/3292500.3330742)  
+[📖 ArXiv 버전](https://arxiv.org/abs/1903.01625)  
+[🔗 GitHub 코드](https://github.com/shjang2020/Recommendation/tree/master/Practice/Transfer%20Learning%20for%20Expanding%20Advertiser%20Audiences)
 
-- ## Abstract
+---
 
-온라인 광고에서 광고주는 기존 고객과 유사한 신규 고객을 찾는 **Audience Expansion** 기술을 활용합니다. 본 논문에서는 Pinterest가 **실제 서비스에 적용한 임베딩 기반 Audience Expansion 모델**을 소개합니다.
+## 프로젝트 소개
 
-핵심 아이디어는 다음과 같습니다.
+본 리포지토리는 “Finding Users Who Act Alike: Transfer Learning for Expanding Advertiser Audiences” 논문에서 제안된 방법을 **PyTorch** 기반으로 구현한 코드와 실험 스크립트를 제공합니다.  
+- **유저 임베딩 학습**: StarSpace 기반 대조 학습 모델  
+- **시드 유저 기반 추천**: 평균 벡터 + 코사인 유사도  
+- **확장 단계**: LSH(Locality‐Sensitive Hashing) + Affinity Scoring MLP  
+- **평가 지표**: Precision@K, Recall@K
 
-- Pinterest의 모든 사용자 데이터를 활용해 **전역 사용자 임베딩 모델**을 학습
-- 광고주가 제공한 소규모 고객 리스트(Seed)를 전역 임베딩 공간에서 효율적으로 표현하고, 이를 통해 신규 고객의 유사도를 측정
-- 기존 광고주별 분류기(Classifier) 모델과 **앙상블(Ensemble)** 하여 성능을 극대화
+---
 
-실험 결과, 제안된 모델은 특히 **소규모 Seed 리스트**에서 기존 분류기 모델의 한계를 크게 극복했으며, 실제 서비스에서 높은 성과를 나타냈습니다.
+## 설치 및 환경 구성
+
+```bash
+# 1. 리포지토리 클론
+git clone https://github.com/shjang2020/Recommendation.git
+
+# 2. 해당 디렉터리로 이동
+cd Recommendation/Practice/"Transfer Learning for Expanding Advertiser Audiences"
+
+# 3. 가상환경 생성 및 활성화 (optional)
+python3 -m venv venv
+source venv/bin/activate   # Linux / macOS
+venv\Scripts\activate      # Windows
+
+# 4. 의존성 설치
+pip install -r requirements.txt
+
