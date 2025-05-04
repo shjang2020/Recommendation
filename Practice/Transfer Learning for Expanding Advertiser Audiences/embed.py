@@ -55,7 +55,7 @@ def main(cfg):
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
-    p.add_argument("--csv_path",   default="mock_user_topic_triplets.csv")
+    p.add_argument("--csv_path",   default="data/mock_user_topic_triplets.csv")
     p.add_argument("--model_path", default="runs/2025-04-25-1732/user_encoder_best.pth")
     p.add_argument("--out_path",   default="data/user_embeddings.parquet")
     p.add_argument("--format",     choices=["parquet", "csv"], default="parquet")
