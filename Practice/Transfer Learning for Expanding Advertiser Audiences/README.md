@@ -1,1 +1,17 @@
+# Finding Users Who Act Alike: Transfer Learning for Expanding Advertiser Audiences (KDD 2019)
 
+- **원본 논문**: https://www.pinterestlabs.com/media/phkg2uau/transferlearning-kdd2019.pdf
+- **저자**: Pinterest 연구팀
+- **키워드**: Audience Expansion, Embedding, Transfer Learning, Look-alike Audience
+
+- ## Abstract | 논문 한눈에 보기
+
+온라인 광고에서 광고주는 기존 고객과 유사한 신규 고객을 찾는 **Audience Expansion** 기술을 활용합니다. 본 논문에서는 Pinterest가 **실제 서비스에 적용한 임베딩 기반 Audience Expansion 모델**을 소개합니다.
+
+핵심 아이디어는 다음과 같습니다.
+
+- Pinterest의 모든 사용자 데이터를 활용해 **전역 사용자 임베딩 모델**을 학습
+- 광고주가 제공한 소규모 고객 리스트(Seed)를 전역 임베딩 공간에서 효율적으로 표현하고, 이를 통해 신규 고객의 유사도를 측정
+- 기존 광고주별 분류기(Classifier) 모델과 **앙상블(Ensemble)** 하여 성능을 극대화
+
+실험 결과, 제안된 모델은 특히 **소규모 Seed 리스트**에서 기존 분류기 모델의 한계를 크게 극복했으며, 실제 서비스에서 높은 성과를 나타냈습니다.
