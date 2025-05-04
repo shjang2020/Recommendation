@@ -1,6 +1,6 @@
 # Finding Users Who Act Alike : Transfer Learning for Expanding Advertiser Audiences 리뷰
 
-- 논문 리뷰 : PDF 파일 및 [Notion](https://roasted-rake-be8.notion.site/Finding-Users-Who-Act-Alike-Transfer-Learning-for-Expanding-Advertiser-Audiences-1dc818aea60f80c0a738e856a4b1dfb2?pvs=4) 참고 부탁드립니다.
+- 논문 리뷰 : [PDF](https://github.com/shjang2020/Recommendation/blob/master/Paper/Finding%20Users%20Who%20Act%20Alike%20%3A%20Transfer%20Learning%20for%20Expanding%20Advertiser%20Audiences/Finding%20Users%20Who%20Act%20Alike_%EB%A6%AC%EB%B7%B0.pdf) 및 [Notion](https://roasted-rake-be8.notion.site/Finding-Users-Who-Act-Alike-Transfer-Learning-for-Expanding-Advertiser-Audiences-1dc818aea60f80c0a738e856a4b1dfb2?pvs=4) 참고 부탁드립니다.
 
 - Code 구현 : [Github](https://github.com/shjang2020/Recommendation/tree/master/Practice/Transfer%20Learning%20for%20Expanding%20Advertiser%20Audiences) 참고 부탁드립니다.
 
