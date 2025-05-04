@@ -56,5 +56,5 @@ for user in mock_users:
 df_triplets = pd.DataFrame(triplets)
 
 # ✅ CSV로 저장
-df_triplets.to_csv("mock_user_topic_triplets.csv", index=False)
+df_triplets.to_csv("data/mock_user_topic_triplets.csv", index=False)
 print("✅ CSV 저장 완료: mock_user_topic_triplets.csv")
