@@ -8,7 +8,10 @@
 - Reference : 다양한 레퍼런스를 아카이빙 하는 페이지
 
 ## 📗Paper
-
+|발행일|제목|링크|원문|
+|:---:|:---:|:---:|:---:|
+|2019.08|Finding Users Who Act Alike : Transfer Learning for Expanding Advertiser Audiences|[링크](https://github.com/shjang2020/Gitple_project)|[원문](https://www.pinterestlabs.com/media/phkg2uau/transferlearning-kdd2019.pdf)|
+|2023.08 ~ |신한저축은행|전략기획부|사원|
 ## 📕Practice
 
 ## 📘Project
