@@ -11,10 +11,10 @@
 |발행일|제목|링크|원문|
 |:---:|:---:|:---:|:---:|
 |2019.08|Finding Users Who Act Alike : Transfer Learning for Expanding Advertiser Audiences|[링크](https://github.com/shjang2020/Recommendation/tree/master/Paper/Finding%20Users%20Who%20Act%20Alike%20%3A%20Transfer%20Learning%20for%20Expanding%20Advertiser%20Audiences)|[원문](https://www.pinterestlabs.com/media/phkg2uau/transferlearning-kdd2019.pdf)|
-|2023.08 ~ |신한저축은행|전략기획부|사원|
 ## 📕Practice
-
-## 📘Project
+|제목|링크|
+|:---:|:---:|
+|Finding Users Who Act Alike : Transfer Learning for Expanding Advertiser Audiences|[링크](https://github.com/shjang2020/Recommendation/tree/master/Practice/Transfer%20Learning%20for%20Expanding%20Advertiser%20Audiences)|
 
 ## 📙Reference
 - Practice : https://github.com/lsjsj92/recommender_system_with_Python
