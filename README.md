@@ -15,6 +15,11 @@
 |제목|링크|
 |:---:|:---:|
 |Finding Users Who Act Alike : Transfer Learning for Expanding Advertiser Audiences|[링크](https://github.com/shjang2020/Recommendation/tree/master/Practice/Transfer%20Learning%20for%20Expanding%20Advertiser%20Audiences)|
+## 📕Project
+|제목|링크|
+|:---:|:---:|
+|FastAPI and Docker|[링크](https://github.com/shjang2020/Recommendation/tree/main/Project/FastAPI%20and%20Docker%20practice)|
+
 
 ## 📙Reference
 - Practice : https://github.com/lsjsj92/recommender_system_with_Python
