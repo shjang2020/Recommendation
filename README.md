@@ -18,7 +18,7 @@
 ## 📘Project
 |제목|링크|
 |:---:|:---:|
-|FastAPI and Docker|[링크](https://github.com/shjang2020/Recommendation/tree/main/Project/FastAPI%20and%20Docker%20practice)|
+|FastAPI and Docker practice with DistilBert|[링크](https://github.com/shjang2020/Recommendation/tree/main/Project/FastAPI%20and%20Docker%20practice)|
 
 
 ## 📙Reference
