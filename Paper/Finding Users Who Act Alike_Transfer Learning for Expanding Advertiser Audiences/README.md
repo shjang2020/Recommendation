@@ -1,18 +1,89 @@
-# Finding Users Who Act Alike : Transfer Learning for Expanding Advertiser Audiences 리뷰
+# Finding Users Who Act Alike: Transfer Learning for Expanding Advertiser Audiences
 
-- 논문 리뷰 : [PDF](https://github.com/shjang2020/Recommendation/blob/master/Paper/Finding%20Users%20Who%20Act%20Alike%20%3A%20Transfer%20Learning%20for%20Expanding%20Advertiser%20Audiences/Finding%20Users%20Who%20Act%20Alike_%EB%A6%AC%EB%B7%B0.pdf) 및 [Notion](https://roasted-rake-be8.notion.site/Finding-Users-Who-Act-Alike-Transfer-Learning-for-Expanding-Advertiser-Audiences-1dc818aea60f80c0a738e856a4b1dfb2?pvs=4) 참고 부탁드립니다.
+[📝 논문 리뷰 Notion 바로가기](https://roasted-rake-be8.notion.site/Finding-Users-Who-Act-Alike-Transfer-Learning-for-Expanding-Advertiser-Audiences-1dc818aea60f80c0a738e856a4b1dfb2)
 
-- Code 구현 : [Github](https://github.com/shjang2020/Recommendation/tree/master/Practice/Transfer%20Learning%20for%20Expanding%20Advertiser%20Audiences) 참고 부탁드립니다.
+Pinterest의 광고 Audience Expansion 논문(KDD 2019)을 리뷰하고, 논문에서 제안한 임베딩 기반 확장 모델을 PyTorch로 재현한 프로젝트입니다.
 
 ---
-## Abstract | 논문 한눈에 보기
 
-온라인 광고에서 광고주는 기존 고객과 유사한 신규 고객을 찾는 **Audience Expansion** 기술을 활용합니다. 본 논문에서는 Pinterest가 **실제 서비스에 적용한 임베딩 기반 Audience Expansion 모델**을 소개합니다.
+## 📄 논문 및 리뷰
 
-핵심 아이디어는 다음과 같습니다.
+- **논문 원문**: [KDD 2019](https://dl.acm.org/doi/10.1145/3292500.3330742) / [arXiv](https://arxiv.org/abs/1903.01625)
+---
 
-- Pinterest의 모든 사용자 데이터를 활용해 **전역 사용자 임베딩 모델**을 학습
-- 광고주가 제공한 소규모 고객 리스트(Seed)를 전역 임베딩 공간에서 효율적으로 표현하고, 이를 통해 신규 고객의 유사도를 측정
-- 기존 광고주별 분류기(Classifier) 모델과 **앙상블(Ensemble)** 하여 성능을 극대화
+## 🛠️ 구현 코드
 
-실험 결과, 제안된 모델은 특히 **소규모 Seed 리스트**에서 기존 분류기 모델의 한계를 크게 극복했으며, 실제 서비스에서 높은 성과를 나타냈습니다.
+- **코드 위치**: [`Code/`](./Code)
+- **주요 구현 내용**:
+  - StarSpace 기반 유저 임베딩 학습
+  - 시드 유저 기반 후보 확장 (Annoy, LSH, 코사인 유사도)
+  - Affinity MLP 및 앙상블 확장
+  - 대규모 임베딩 분산 처리 (MapReduce 예시)
+  - 실험용 mock 데이터 생성 및 전체 파이프라인 제공
+
+### 주요 스크립트
+- `generate_mock_data.py`: 모의 사용자-토픽 데이터 생성
+- `train.py`: StarSpace-style margin-ranking loss로 임베딩 학습
+- `embed.py`: 임베딩 추출 및 저장
+- `build_ann_index.py`: Annoy 인덱스 생성
+- `expand_seed_users.py`: 시드 기반 후보 확장
+- `train_affinity.py`: Affinity MLP 학습
+- `region_seed_ensemble_expansion.py`: 앙상블 확장 파이프라인
+- `lsh_mapreduce.py`, `mapreduce_framework.py`: 분산 LSH MapReduce 예시
+
+### 데이터 예시
+- `data/mock_user_topic_triplets.csv`: 사용자-토픽 상호작용 데이터
+- `data/user_embeddings.parquet`: 학습된 유저 임베딩
+- `data/annoy_user.idx`, `data/annoy_user.idmap.npy`: Annoy 인덱스 및 매핑
+- `data/seed_to_cands.npy`, `data/final_expanded.npy`: 확장 결과
+
+### 모델 예시
+- `models/affinity_mlp.pth`: 학습된 Affinity MLP 모델
+
+---
+
+## 💻 실행 예시
+
+```bash
+# 1. 환경 세팅
+conda env create -f environment.yml
+conda activate transfer-learning-ad-audiences
+
+# 2. 데이터 생성
+python generate_mock_data.py --num-users 10000 --num-topics 100 --interactions-per-user 50
+
+# 3. 임베딩 학습
+python train.py --csv_path data/mock_user_topic_triplets.csv --epochs 10 --batch_size 256 --dim 32 --lr 1e-3 --margin 0.2 --es_patience 3
+
+# 4. 임베딩 추출
+python embed.py --csv_path data/mock_user_topic_triplets.csv --model_path runs/<timestamp>/user_encoder_best.pth --out_path data/user_embeddings.parquet --format parquet
+
+# 5. Annoy 인덱스 생성
+python build_ann_index.py --embed_path data/user_embeddings.parquet --index_path data/annoy_user.idx --metric angular --n_trees 50
+
+# 6. 시드 기반 후보 확장
+python expand_seed_users.py 1234 5678 9012 --top_k 200 --index_path data/annoy_user.idx --search_k 500 --pairs_out data/seed_to_cands.npy
+
+# 7. Affinity MLP 학습
+python train_affinity.py --embed_path data/user_embeddings.parquet --lsh_pairs data/seed_to_cands.npy --out_dir models --dim 32 --epochs 10 --batch 512
+
+# 8. 앙상블 확장 실행
+python region_seed_ensemble_expansion.py --embed_path data/user_embeddings.parquet --seed_ids 1234 5678 9012 --n_workers 4 --n_trees 10 --top_k_lsh 200 --top_k_final 100 --out_path data/final_expanded.npy
+```
+
+---
+
+## 📂 폴더 구조
+
+```
+Finding Users Who Act Alike_Transfer Learning for Expanding Advertiser Audiences/
+├── Finding Users Who Act Alike_리뷰.pdf
+├── README.md
+└── Code/
+    ├── data/
+    ├── models/
+    ├── runs/
+    ├── *.py
+    ├── environment.yml
+    └── README.md
+```
