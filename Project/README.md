@@ -12,46 +12,29 @@
 
 ### 프로젝트 개요
 - **목적**: 실시간 영화 추천 API 서비스 구현 및 배포
-- **기술 스택**: 
-  - Backend: FastAPI
-  - ML: DistilBERT, PyTorch
-  - Infrastructure: Docker, Redis
-  - Data: MovieLens, TMDB API
+- **기술 스택**: FastAPI, DistilBERT, Docker, Redis
+- **주요 기능**: 장르/키워드 기반 추천, Redis 캐싱, API 문서화
 
-### 주요 기능
-1. **영화 추천**
-   - 장르 기반 추천
-   - 키워드 기반 추천
-   - 연도 범위 지정
-   - 추천 수 조절 (1-10개)
+### 구현 내용
+1. **모델 구현**
+   - DistilBERT를 활용한 영화 임베딩 생성
+   - 코사인 유사도 기반 추천 알고리즘
+   - Redis를 활용한 추천 결과 캐싱
 
-2. **성능 최적화**
-   - Redis 캐싱
-   - DistilBERT 모델 경량화
-   - 비동기 처리
+2. **서비스 구현**
+   - FastAPI 기반 RESTful API 서버
+   - Swagger UI를 통한 API 문서화
+   - Docker 컨테이너화 및 배포
 
-3. **운영 기능**
-   - API 문서화 (Swagger UI)
-   - 로깅 시스템
-   - 에러 처리
-   - 모니터링
+3. **성능 최적화**
+   - 비동기 처리 구현
+   - 캐시 전략 수립
+   - 모델 경량화
 
-### 시스템 아키텍처
-```
-[Client] <-> [FastAPI Server] <-> [Redis Cache]
-                    |
-                    v
-            [DistilBERT Model]
-                    |
-                    v
-            [MovieLens Data]
-```
-
-### 배포 환경
-- Docker 컨테이너화
-- Redis 캐시 서버
-- 환경 변수 관리
-- 볼륨 마운트
+### 향후 개선점
+- 실시간 추천 시스템으로 확장
+- 개인화 추천 기능 추가
+- A/B 테스트 프레임워크 구축
 
 ## 🚀 향후 진행할 프로젝트
 
