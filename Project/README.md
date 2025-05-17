@@ -4,9 +4,9 @@
 
 ## 📚 프로젝트 목록
 
-| 제목 | 링크 | 설명 |
-|:---:|:---:|:---:|
-| FastAPI and Docker practice with DistilBert | [링크](./FastAPI%20and%20Docker%20practice) | DistilBERT 기반 영화 추천 시스템 구현 및 FastAPI, Docker를 활용한 배포 |
+| 제목 | 설명 |
+|:---:|:---:|
+| [FastAPI and Docker practice with DistilBert](./FastAPI%20and%20Docker%20practice) | DistilBERT 기반 영화 추천 시스템 구현 및 FastAPI, Docker를 활용한 배포 |
 
 ## 🎬 현재 구현 프로젝트: DistilBERT 기반 영화 추천 시스템
 

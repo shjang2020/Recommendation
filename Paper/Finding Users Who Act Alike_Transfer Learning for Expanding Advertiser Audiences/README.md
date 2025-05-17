@@ -9,6 +9,9 @@ Pinterest의 광고 Audience Expansion 논문(KDD 2019)을 리뷰하고, 논문�
 ## 📄 논문 및 리뷰
 
 - **논문 원문**: [KDD 2019](https://www.pinterestlabs.com/media/phkg2uau/transferlearning-kdd2019.pdf)
+- **리뷰 PDF**: [`Finding Users Who Act Alike_리뷰.pdf`](./Finding%20Users%20Who%20Act%20Alike_%EB%A6%AC%EB%B7%B0.pdf)
+- **Notion 리뷰**: [바로가기](https://roasted-rake-be8.notion.site/Finding-Users-Who-Act-Alike-Transfer-Learning-for-Expanding-Advertiser-Audiences-1dc818aea60f80c0a738e856a4b1dfb2)
+
 ---
 
 ## 🛠️ 구현 코드

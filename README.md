@@ -8,23 +8,23 @@
 - Reference : 다양한 레퍼런스를 아카이빙 하는 페이지
 
 ## 📗Paper
-|발행일|제목|링크|원문|
-|:---:|:---:|:---:|:---:|
-|2019.08|Finding Users Who Act Alike : Transfer Learning for Expanding Advertiser Audiences|[링크](https://github.com/shjang2020/Recommendation/tree/master/Paper/Finding%20Users%20Who%20Act%20Alike%20%3A%20Transfer%20Learning%20for%20Expanding%20Advertiser%20Audiences)|[원문](https://www.pinterestlabs.com/media/phkg2uau/transferlearning-kdd2019.pdf)|
+|발행일|제목|원문|
+|:---:|:---:|:---:|
+|2019.08|[Finding Users Who Act Alike : Transfer Learning for Expanding Advertiser Audiences](./Paper/Finding%20Users%20Who%20Act%20Alike%20%3A%20Transfer%20Learning%20for%20Expanding%20Advertiser%20Audiences)|[원문](https://www.pinterestlabs.com/media/phkg2uau/transferlearning-kdd2019.pdf)|
 
 ## 📕Practice
-|제목|링크|상태|
-|:---:|:---:|:---:|
-|(기초) 추천시스템_협업필터링|[링크](./Practice/\(기초\)%20추천시스템_협업필터링.ipynb)|✅ 완료|
-|(기초) 추천시스템- 아이템 기반 협업 필터링|[링크](./Practice/\(기초\)%20추천시스템-%20아이템%20기반%20협업%20필터링.ipynb)|✅ 완료|
-|(기초) 추천시스템_개인화 추천|[링크](./Practice/\(기초\)%20추천시스템_개인화%20추천.ipynb)|✅ 완료|
-|1. 추천시스템 구현 및 성능평가(CF, MF)|[링크](./Practice/1.%20추천시스템%20구현%20및%20성능평가\(CF%2C%20MF\).ipynb)|✅ 완료|
-|2. LightFM 구현|[링크](./Practice/2.%20LightFM%20구현.ipynb)|✅ 완료|
+|제목|상태|
+|:---:|:---:|
+|[(기초) 추천시스템_협업필터링](./Practice/\(기초\)%20추천시스템_협업필터링.ipynb)|✅ 완료|
+|[(기초) 추천시스템- 아이템 기반 협업 필터링](./Practice/\(기초\)%20추천시스템-%20아이템%20기반%20협업%20필터링.ipynb)|✅ 완료|
+|[(기초) 추천시스템_개인화 추천](./Practice/\(기초\)%20추천시스템_개인화%20추천.ipynb)|✅ 완료|
+|[1. 추천시스템 구현 및 성능평가(CF, MF)](./Practice/1.%20추천시스템%20구현%20및%20성능평가\(CF%2C%20MF\).ipynb)|✅ 완료|
+|[2. LightFM 구현](./Practice/2.%20LightFM%20구현.ipynb)|✅ 완료|
 
 ## 📘Project
-|제목|링크|설명|
-|:---:|:---:|:---:|
-|FastAPI and Docker practice with DistilBert|[링크](./Project/FastAPI%20and%20Docker%20practice)|DistilBERT 기반 영화 추천 시스템 구현 및 FastAPI, Docker를 활용한 배포|
+|제목|설명|
+|:---:|:---:|
+|[FastAPI and Docker practice with DistilBert](./Project/FastAPI%20and%20Docker%20practice)|DistilBERT 기반 영화 추천 시스템 구현 및 FastAPI, Docker를 활용한 배포|
 
 ## 📙Reference
 ### 추천 시스템 구현
