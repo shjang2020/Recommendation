@@ -8,7 +8,7 @@ Pinterest의 광고 Audience Expansion 논문(KDD 2019)을 리뷰하고, 논문�
 
 ## 📄 논문 및 리뷰
 
-- **논문 원문**: [KDD 2019](https://dl.acm.org/doi/10.1145/3292500.3330742) / [arXiv](https://arxiv.org/abs/1903.01625)
+- **논문 원문**: [KDD 2019](https://www.pinterestlabs.com/media/phkg2uau/transferlearning-kdd2019.pdf)
 ---
 
 ## 🛠️ 구현 코드
