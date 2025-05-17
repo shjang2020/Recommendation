@@ -4,9 +4,9 @@
 
 ## 📚 논문 목록
 
-| 발행일 | 제목 | 구현 |
-|:---:|:---:|:---:|
-| 2019.08 | [Finding Users Who Act Alike : Transfer Learning for Expanding Advertiser Audiences](https://www.pinterestlabs.com/media/phkg2uau/transferlearning-kdd2019.pdf) | [바로가기](./Finding%20Users%20Who%20Act%20Alike_Transfer%20Learning%20for%20Expanding%20Advertiser%20Audiences)|
+| 발행일 | 제목 | 리뷰 | 구현 |
+|:---:|:---:|:---:|:---:|
+| 2019.08 | [Finding Users Who Act Alike : Transfer Learning for Expanding Advertiser Audiences](https://www.pinterestlabs.com/media/phkg2uau/transferlearning-kdd2019.pdf) | [Notion](https://roasted-rake-be8.notion.site/Finding-Users-Who-Act-Alike-Transfer-Learning-for-Expanding-Advertiser-Audiences-1dc818aea60f80c0a738e856a4b1dfb2) | [바로가기](./Finding%20Users%20Who%20Act%20Alike_Transfer%20Learning%20for%20Expanding%20Advertiser%20Audiences)|
 
 ## 📖 앞으로 읽을 논문 리스트
 
