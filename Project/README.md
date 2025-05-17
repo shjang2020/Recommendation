@@ -2,13 +2,13 @@
 
 실제 추천 시스템 프로젝트를 진행하며 정리하는 공간입니다.
 
-## 📚 프로젝트 목록
+## 프로젝트 목록
 
 | 제목 | 설명 |
 |:---:|:---:|
 | [FastAPI and Docker practice with DistilBert](./FastAPI%20and%20Docker%20practice) | DistilBERT 기반 영화 추천 시스템 구현 및 FastAPI, Docker를 활용한 배포 |
 
-## 🎬 현재 구현 프로젝트: DistilBERT 기반 영화 추천 시스템
+## 현재 구현 프로젝트: DistilBERT 기반 영화 추천 시스템
 
 ### 프로젝트 개요
 - **목적**: 실시간 영화 추천 API 서비스 구현 및 배포
@@ -36,7 +36,7 @@
 - 개인화 추천 기능 추가
 - A/B 테스트 프레임워크 구축
 
-## 🚀 향후 진행할 프로젝트
+## 향후 진행할 프로젝트
 
 ### 1. 실시간 추천 시스템
 - Apache Kafka를 활용한 실시간 데이터 처리

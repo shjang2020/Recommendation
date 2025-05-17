@@ -11,7 +11,7 @@ Pinterest의 광고 Audience Expansion 논문(KDD 2019)을 리뷰하고, 논문�
 
 ---
 
-## 🛠️ 구현 코드
+## 구현 코드
 
 - **코드 위치**: [`Code/`](./Code)
 - **주요 구현 내용**:
@@ -42,7 +42,7 @@ Pinterest의 광고 Audience Expansion 논문(KDD 2019)을 리뷰하고, 논문�
 
 ---
 
-## 💻 실행 예시
+## 실행 예시
 
 ```bash
 # 1. 환경 세팅
