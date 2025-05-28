@@ -26,19 +26,6 @@
 |:---:|:---:|
 |[FastAPI and Docker practice with DistilBert](./Project/FastAPI%20and%20Docker%20practice)|DistilBERT 기반 영화 추천 시스템 구현 및 FastAPI, Docker를 활용한 배포|
 
-## 📙Reference
-### 추천 시스템 구현
-- [Recommender System with Python](https://github.com/lsjsj92/recommender_system_with_Python)
-- [LightFM Documentation](https://making.lyst.com/lightfm/docs/home.html)
-- [Surprise Documentation](https://surprise.readthedocs.io/en/stable/)
-
-### 추천 시스템 논문
-- [Awesome Recommender Systems](https://github.com/robi56/awesome-recommender-systems)
-- [RecSys Papers](https://github.com/jihoo-kim/awesome-recommender-systems)
-
-### 추천 시스템 튜토리얼
-- [Microsoft Recommender Systems](https://github.com/microsoft/recommenders)
-- [Google Cloud Retail API](https://cloud.google.com/retail/docs/recommendations)
 
 #### ETC - Notion page
 https://www.notion.so/PORTFOLIO-655d731fb5b24495a36b47bd1cab5ee1
