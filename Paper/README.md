@@ -4,9 +4,10 @@
 
 ## 📖 논문 목록
 
-| 발행일 | 제목 | 리뷰 | 구현 |
-|:---:|:---:|:---:|:---:|
-| 2019.08 | [Finding Users Who Act Alike : Transfer Learning for Expanding Advertiser Audiences](https://www.pinterestlabs.com/media/phkg2uau/transferlearning-kdd2019.pdf) | [Notion](https://roasted-rake-be8.notion.site/Finding-Users-Who-Act-Alike-Transfer-Learning-for-Expanding-Advertiser-Audiences-1dc818aea60f80c0a738e856a4b1dfb2) | [바로가기](./Finding%20Users%20Who%20Act%20Alike_Transfer%20Learning%20for%20Expanding%20Advertiser%20Audiences)|
+| 발행일 | 제목 | 분야 | 리뷰 | 구현 |
+|:---:|:---:|:---:|:---:|:---:|
+| 2019.08 | [Finding Users Who Act Alike : Transfer Learning for Expanding Advertiser Audiences](https://www.pinterestlabs.com/media/phkg2uau/transferlearning-kdd2019.pdf) | 추천시스템 | [Notion](https://roasted-rake-be8.notion.site/Finding-Users-Who-Act-Alike-Transfer-Learning-for-Expanding-Advertiser-Audiences-1dc818aea60f80c0a738e856a4b1dfb2) | [바로가기](./Finding%20Users%20Who%20Act%20Alike_Transfer%20Learning%20for%20Expanding%20Advertiser%20Audiences)|
+| 2012 | [AlexNet: ImageNet Classification with Deep Convolutional Neural Networks](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf) | CV | [Notion](https://roasted-rake-be8.notion.site/ImageNet-Classification-with-Deep-Convolutional-Neural-Networks-2012-1fb818aea60f80649988cba3b9c695aa?source=copy_link) | - |
 
 ## 앞으로 읽을 논문 리스트
 
@@ -15,8 +16,6 @@
 | 추천 시스템 | Matrix Factorization Techniques for Recommender Systems | 2009 | [원문](https://datajobs.com/data-science-repo/Recommender-Systems-[Netflix].pdf) |
 | 추천 시스템 | Deep Neural Networks for YouTube Recommendations | 2016 | [원문](https://static.googleusercontent.com/media/research.google.com/ko//pubs/archive/45530.pdf) |
 | 추천 시스템 | BERT4Rec: Sequential Recommendation with Bidirectional Encoder Representations from Transformer | 2019 | [원문](https://arxiv.org/pdf/1904.06690.pdf) |
-| 기초와 대표적 방법론 논문 | AlexNet: ImageNet Classification with Deep Convolutional Neural Networks | 2012 | [원문](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf) |
-| 기초와 대표적 방법론 논문 | ResNet: Deep Residual Learning for Image Recognition | 2015 | [원문](https://arxiv.org/pdf/1512.03385) |
 | 기초와 대표적 방법론 논문 | Attention is All You Need | 2017 | [원문](https://arxiv.org/pdf/1706.03762) |
 | 현대적/실무적 방법론 논문 | OPT: Open Pre-trained Transformer Language Models | 2022 | [원문](https://arxiv.org/pdf/2205.01068) |
 | 현대적/실무적 방법론 논문 | TimesNet: Temporal 2D-Variation Modeling for General Time Series Analysis | 2023 | [원문](https://arxiv.org/pdf/2210.02186) |
