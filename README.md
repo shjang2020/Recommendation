@@ -12,7 +12,7 @@
 |:---:|:---:|:---:|:---:|
 |2019.08|[Finding Users Who Act Alike : Transfer Learning for Expanding Advertiser Audiences](./Paper/Finding%20Users%20Who%20Act%20Alike%20%3A%20Transfer%20Learning%20for%20Expanding%20Advertiser%20Audiences)|추천시스템|[원문](https://www.pinterestlabs.com/media/phkg2uau/transferlearning-kdd2019.pdf)|
 |2012|[AlexNet: ImageNet Classification with Deep Convolutional Neural Networks](./Paper/Imagenet%20Classification%20With%20Deep%20Convolutional%20Neural%20Networks%20(AlexNet)/)|CV|[원문](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)|
-|2017|[Attention Is All You Need](./Paper/Attention%20Is%20All%20You%20Need/)|기초와 대표적 방법론 논문|[원문](https://arxiv.org/abs/1706.03762)|
+|2017|[Attention Is All You Need](./Paper/Attention%20Is%20All%20You%20Need/)|NLP|[원문](https://arxiv.org/abs/1706.03762)|
 
 ## 📕Practice
 |제목|상태|
