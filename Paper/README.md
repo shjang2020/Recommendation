@@ -6,16 +6,16 @@
 
 | 분야 | 발행일 | 제목 | 리뷰 | 구현 |
 |:---:|:---:|:---:|:---:|:---:|
+| 추천시스템 | 2009 | Matrix Factorization Techniques for Recommender Systems | [Notion](https://roasted-rake-be8.notion.site/Matrix-Factorization-Techniques-for-Recommender-Systems-2009-209818aea60f8042b92ef38d52c217a2?source=copy_link) | [바로가기](./Matrix%20Factorization%20Techniques%20for%20Recommender%20Systems/) |
+| 추천시스템 | 2019 | Finding Users Who Act Alike : Transfer Learning for Expanding Advertiser Audiences | [Notion](https://roasted-rake-be8.notion.site/Finding-Users-Who-Act-Alike-Transfer-Learning-for-Expanding-Advertiser-Audiences-1dc818aea60f80c0a738e856a4b1dfb2) | [바로가기](./Finding%20Users%20Who%20Act%20Alike_Transfer%20Learning%20for%20Expanding%20Advertiser%20Audiences/) |
+| NLP | 2017 | Attention Is All You Need | [Notion](https://www.notion.so/Attention-is-all-you-need-2017-205818aea60f80d986aed29772bbc9ff) | - |
 | CV | 2012 | ImageNet Classification with Deep Convolutional Neural Networks | [Notion](https://roasted-rake-be8.notion.site/ImageNet-Classification-with-Deep-Convolutional-Neural-Networks-2012-1fb818aea60f80649988cba3b9c695aa?source=copy_link) | - |
 | CV | 2015 | Deep Residual Learning for Image Recognition (ResNet) | [Notion](https://www.notion.so/Deep-Residual-Learning-for-Image-Recognition-2015-205818aea60f80fe9544d15d53394b5d) | - |
-| NLP | 2017 | Attention Is All You Need | [Notion](https://www.notion.so/Attention-is-all-you-need-2017-205818aea60f80d986aed29772bbc9ff) | - |
-| 추천시스템 | 2019 | Finding Users Who Act Alike : Transfer Learning for Expanding Advertiser Audiences | [Notion](https://roasted-rake-be8.notion.site/Finding-Users-Who-Act-Alike-Transfer-Learning-for-Expanding-Advertiser-Audiences-1dc818aea60f80c0a738e856a4b1dfb2) | [바로가기](./Finding%20Users%20Who%20Act%20Alike_Transfer%20Learning%20for%20Expanding%20Advertiser%20Audiences/) |
 
 ## 앞으로 읽을 논문 리스트
 
 | 분야 | 논문 제목 | 발행연도 | 원문 링크 |
 |:---:|:---|:---:|:---:|
-| 추천 시스템 | Matrix Factorization Techniques for Recommender Systems | 2009 | [원문](https://datajobs.com/data-science-repo/Recommender-Systems-[Netflix].pdf) |
 | 추천 시스템 | Deep Neural Networks for YouTube Recommendations | 2016 | [원문](https://static.googleusercontent.com/media/research.google.com/ko//pubs/archive/45530.pdf) |
 | 추천 시스템 | BERT4Rec: Sequential Recommendation with Bidirectional Encoder Representations from Transformer | 2019 | [원문](https://arxiv.org/pdf/1904.06690.pdf) |
 | 현대적/실무적 방법론 논문 | OPT: Open Pre-trained Transformer Language Models | 2022 | [원문](https://arxiv.org/pdf/2205.01068) |
