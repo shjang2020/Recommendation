@@ -1,17 +1,15 @@
 # Finding Users Who Act Alike: Transfer Learning for Expanding Advertiser Audiences
 
-Pinterest의 광고 Audience Expansion 논문(KDD 2019)을 리뷰하고, 논문에서 제안한 임베딩 기반 확장 모델을 PyTorch로 재현한 프로젝트입니다.
+- **원문**: [Finding Users Who Act Alike : Transfer Learning for Expanding Advertiser Audiences](https://www.pinterestlabs.com/media/phkg2uau/transferlearning-kdd2019.pdf)
+- **발행연도**: 2019
+- **분야**: 추천시스템
 
----
+## 논문 리뷰
 
-## 📄 논문 및 리뷰
+- [논문 리뷰 PDF](./Finding%20Users%20Who%20Act%20Alike(Transfer%20Learning%20for%20Expanding%20Advertiser%20Audiences)%20논문%20리뷰.pdf)
+- [Notion](https://roasted-rake-be8.notion.site/Finding-Users-Who-Act-Alike-Transfer-Learning-for-Expanding-Advertiser-Audiences-1dc818aea60f80c0a738e856a4b1dfb2)
 
-- **논문 원문**: [KDD 2019](https://www.pinterestlabs.com/media/phkg2uau/transferlearning-kdd2019.pdf)
-- **Notion 리뷰**: [📝 논문 리뷰 Notion 바로가기](https://roasted-rake-be8.notion.site/Finding-Users-Who-Act-Alike-Transfer-Learning-for-Expanding-Advertiser-Audiences-1dc818aea60f80c0a738e856a4b1dfb2)
-
----
-
-## 구현 코드
+## 구현
 
 - **코드 위치**: [`Code/`](./Code)
 - **주요 구현 내용**:

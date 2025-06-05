@@ -2,7 +2,7 @@
 
 - **원문**: [ImageNet Classification with Deep Convolutional Neural Networks](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)
 - **발행연도**: 2012
-- **분야**: 기초와 대표적 방법론 논문
+- **분야**: CV
 
 ## 논문 리뷰
 

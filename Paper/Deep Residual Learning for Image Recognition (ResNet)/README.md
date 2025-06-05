@@ -2,7 +2,7 @@
 
 - **원문**: [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385)
 - **발행연도**: 2015
-- **분야**: 기초와 대표적 방법론 논문
+- **분야**: CV
 
 ## 논문 리뷰
 

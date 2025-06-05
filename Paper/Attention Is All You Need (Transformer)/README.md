@@ -2,7 +2,7 @@
 
 - **원문**: [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
 - **발행연도**: 2017
-- **분야**: 기초와 대표적 방법론 논문
+- **분야**: NLP
 
 ## 논문 리뷰
 
