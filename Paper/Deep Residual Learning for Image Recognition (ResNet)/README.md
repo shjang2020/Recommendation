@@ -7,6 +7,8 @@
 ## 논문 리뷰
 
 - [논문 리뷰 PDF](./Deep_Residual_Learning_for_Image_Recognition_(ResNet)%20논문%20리뷰.pdf)
+- [Notion](https://www.notion.so/Deep-Residual-Learning-for-Image-Recognition-2015-205818aea60f80fe9544d15d53394b5d)
+
 
 ## 구현
 
