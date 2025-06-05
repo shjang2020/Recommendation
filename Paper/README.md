@@ -8,6 +8,7 @@
 |:---:|:---:|:---:|:---:|:---:|
 | 2019 | [Finding Users Who Act Alike : Transfer Learning for Expanding Advertiser Audiences](https://www.pinterestlabs.com/media/phkg2uau/transferlearning-kdd2019.pdf) | 추천시스템 | [Notion](https://roasted-rake-be8.notion.site/Finding-Users-Who-Act-Alike-Transfer-Learning-for-Expanding-Advertiser-Audiences-1dc818aea60f80c0a738e856a4b1dfb2) | [바로가기](./Finding%20Users%20Who%20Act%20Alike_Transfer%20Learning%20for%20Expanding%20Advertiser%20Audiences)|
 | 2012 | [AlexNet: ImageNet Classification with Deep Convolutional Neural Networks](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf) | CV | [Notion](https://roasted-rake-be8.notion.site/ImageNet-Classification-with-Deep-Convolutional-Neural-Networks-2012-1fb818aea60f80649988cba3b9c695aa?source=copy_link) | - |
+| 2015 | [Deep Residual Learning for Image Recognition (ResNet)](https://arxiv.org/abs/1512.03385) | CV | [PDF](./Deep%20Residual%20Learning%20for%20Image%20Recognition%20(ResNet)/Deep_Residual_Learning_for_Image_Recognition_(ResNet)%20논문%20리뷰.pdf) | - |
 | 2017 | [Attention Is All You Need](https://arxiv.org/abs/1706.03762) | NLP | [Notion](https://www.notion.so/Attention-is-all-you-need-2017-205818aea60f80d986aed29772bbc9ff) | - |
 
 ## 앞으로 읽을 논문 리스트
