@@ -7,7 +7,7 @@
 ## 논문 리뷰
 
 - [논문 리뷰 PDF](./Attention%20Is%20All%20You%20Need(Transformer)%20논문%20리뷰.pdf)
-- [Notion](https://www.notion.so/Attention-is-all-you-need-2017-205818aea60f80d986aed29772bbc9ff)
+- [Notion](https://roasted-rake-be8.notion.site/Attention-is-all-you-need-2017-205818aea60f80d986aed29772bbc9ff?pvs=74)
 
 ## 구현
 
